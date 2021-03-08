@@ -1,13 +1,19 @@
 let slideIndex = 1;
+let interval = setInterval(() => showSlides(slideIndex += 1), 4000);
+
 showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
+  clearInterval(interval);
+  interval = setInterval(() => showSlides(slideIndex += 1), 4000);
   showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
+  clearInterval(interval);
+  interval = setInterval(() => showSlides(slideIndex += 1), 4000);
   showSlides(slideIndex = n);
 }
 
