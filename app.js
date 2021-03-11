@@ -20,9 +20,15 @@ function showSlides(n) {
   let i;
   const slides = document.querySelectorAll(".mySlides");
   if(slideIndex <= 0) { slideIndex = 1; }
-  if(slideIndex > slides.length) { slideIndex = slides.length; }
-  for (i = 0; i < slideIndex; i++) {
-      slides[i].style.marginLeft = "-100vw";
+  if(slideIndex > slides.length) { 
+    slideIndex = 1; 
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.marginLeft = "0vw";
+  }
+  } else {
+    for (i = 0; i < slideIndex; i++) {
+        slides[i].style.marginLeft = "-100vw";
+    }
   }
   slides[slideIndex-1].style.marginLeft = "0vw";
 }
