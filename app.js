@@ -1,10 +1,9 @@
 let slideIndex = 1;
 let interval = setInterval(() => showSlides(slideIndex += 1), 4000);
 
-showSlides(slideIndex);
-
 // Next/previous controls
 function plusSlides(n) {
+  console.log(n);
   clearInterval(interval);
   interval = setInterval(() => showSlides(slideIndex += 1), 4000);
   showSlides(slideIndex += n);
@@ -19,11 +18,11 @@ function currentSlide(n) {
 
 function showSlides(n) {
   let i;
-  const slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+  const slides = document.querySelectorAll(".mySlides");
+  if(slideIndex <= 0) { slideIndex = 1; }
+  if(slideIndex > slides.length) { slideIndex = slides.length; }
+  for (i = 0; i < slideIndex; i++) {
+      slides[i].style.marginLeft = "-100vw";
   }
-  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex-1].style.marginLeft = "0vw";
 }
