@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+body {
+  overflow-x: hidden;
+}
+
 * {
   margin: 0px;
   padding: 0px;
 }
 
 .slideshow-container {
-  width: 300vw;
   position: relative;
   margin: auto;
   display: flex;
@@ -34,7 +37,6 @@
 }
 
 .next {
-  right: 200vw;
   border-radius: 3px 0 0 3px;
 }
 

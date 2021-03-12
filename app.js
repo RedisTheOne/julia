@@ -9,6 +9,9 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
+document.querySelector('.slideshow-container').style.width = `${ document.querySelectorAll(".mySlides").length}00vw`;
+document.querySelector('.next').style.right = `${ document.querySelectorAll(".mySlides").length - 1}00vw`;
+
 // Thumbnail image controls
 function currentSlide(n) {
   clearInterval(interval);
